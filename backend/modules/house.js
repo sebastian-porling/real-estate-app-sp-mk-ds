@@ -57,6 +57,11 @@ module.exports.add = async (house) => {
     house.id = shortid.generate();
     delete house.agent_id;
     agent.listings.push(house);
-    fw.writeJson("./data/house_data.json", data);
-    return house;
+    try {
+        fw.writeJson("./data/house_data.json", data);
+        return house;
+    } catch (error) {
+        // TODO - Handle error from file writer
+        return;
+    }
 }
