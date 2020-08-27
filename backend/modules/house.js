@@ -1,9 +1,12 @@
 const data = require("../data/house_data.json");
+const fw = require('./fileWriter.js');
+const shortid = require('shortid');
 
 /**
  * Returns all houses 
+ * @returns array of houses or empty array
  */
-module.exports.getAll= () => {
+module.exports.getAll = async () => {
     const houses = [];
     const tempData = JSON.parse(JSON.stringify(data));
     for (const agent of tempData) {
@@ -22,21 +25,38 @@ module.exports.getAll= () => {
 /**
  * Finds the house on the given id.
  * @param {String} id 
+ * @returns house or undefined
  */
-module.exports.get = (id) => {
+module.exports.get = async (id) => {
     let house = {};
     const tempData = JSON.parse(JSON.stringify(data));
-    const agent = tempData.find(agent => house = agent.listings.find(house => house.id === id));
-    if(agent !== undefined) {
-        delete agent.listings;
-    }
+    const agent =   tempData.find(agent => house = agent.listings
+                            .find(house => house.id === id));
+    if(agent !== undefined) delete agent.listings;
     return {...house, agent};
 }
 
 /**
  * Finds the agent on the given id.
  * @param {Integer} id 
+ * @returns agent or undefined
  */
-module.exports.getAgent = (id) => {
-    return data.filter(agent => agent.id == id);
+module.exports.getAgent = async (id) => {
+    return data.filter(agent => agent.id == id)[0];
+}
+
+/**
+ * Creates a house if it already doesn't exist and if agent exists
+ * @param {Object} house 
+ * @returns the created house or undefined
+ */
+module.exports.add = async (house) => {
+    if(this.getAll().find(h => h.address == house.address)) return;
+    const agent = this.getAgent(house.agent_id);
+    if (agent === undefined) return;
+    house.id = shortid.generate();
+    delete house.agent_id;
+    agent.listings.push(house);
+    fw.writeJson("./data/house_data.json", data);
+    return house;
 }
