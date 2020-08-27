@@ -51,8 +51,9 @@ module.exports.getAgent = async (id) => {
  * @returns the created house or undefined
  */
 module.exports.add = async (house) => {
-    if(this.getAll().find(h => h.address == house.address)) return;
-    const agent = this.getAgent(house.agent_id);
+    const houses = await this.getAll();
+    if(houses.find(h => h.address == house.address)) return;
+    const agent = await this.getAgent(house.agent_id);
     if (agent === undefined) return;
     house.id = shortid.generate();
     delete house.agent_id;
