@@ -4,7 +4,9 @@
   "description": "Backend for the real estate application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin.js",
+    "dev": "nodemon bin.js"
   },
   "keywords": [
     "express"
@@ -20,5 +22,8 @@
     "morgan": "^1.10.0",
     "pkg": "^4.4.9",
     "shortid": "^2.2.15"
+  },
+    "devDependencies": {
+      "nodemon": "^2.0.4"
   }
 }
