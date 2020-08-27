@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <HousesForSaleList></HousesForSaleList>
+  
+        <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HousesForSaleList from './components/HousesForSaleList.vue'
 export default {
-  name: 'App',
-  components: {
-     HousesForSaleList
-  }
+  name: 'App'
 }
 </script>
 
