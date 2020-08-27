@@ -6,6 +6,11 @@ const app = express();
 /* register logger */
 app.use(logger);
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
 /**
  * Gets all the houses
  */

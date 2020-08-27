@@ -36,7 +36,8 @@ export default {
     console.log(response.data);
   },
   mounted() {
-  },
+    
+    },
 };
 </script>
 
