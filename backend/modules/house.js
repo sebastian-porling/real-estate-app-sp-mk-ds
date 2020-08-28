@@ -1,6 +1,6 @@
-const data = require("../data/house_data.json");
-const fw = require('../integration/fileWriter.js');
-const shortid = require('shortid');
+const data = require("../data/house_data.json")
+    , fw = require('../integration/fileWriter.js')
+    , shortid = require('shortid');
 
 /**
  * Returns all houses 
@@ -10,8 +10,8 @@ module.exports.getAll = async () => {
     const houses = [];
     const tempData = JSON.parse(JSON.stringify(data));
     for (const agent of tempData) {
-        const newListings = [];
-        const agentListings = agent.listings;
+        const newListings = []
+            , agentListings = agent.listings;
         delete agent.listings;
         for (const house of agentListings) {
             newHouse = {...house, agent};
@@ -29,8 +29,8 @@ module.exports.getAll = async () => {
  */
 module.exports.get = async (id) => {
     let house = {};
-    const tempData = JSON.parse(JSON.stringify(data));
-    const agent =   tempData.find(agent => house = agent.listings
+    const tempData = JSON.parse(JSON.stringify(data))
+        , agent =   tempData.find(agent => house = agent.listings
                             .find(house => house.id === id));
     if(agent !== undefined) delete agent.listings;
     return {...house, agent};
