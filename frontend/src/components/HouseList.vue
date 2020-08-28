@@ -2,7 +2,7 @@
     <div>
         <div class="row no-gutters">
             <div class="col-md-4">
-                        <img v-bind:src="'http://localhost:3000' + house.images[0]" class="card-img" alt="...">
+                        <img v-bind:src="house.images[0]" class="card-img" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

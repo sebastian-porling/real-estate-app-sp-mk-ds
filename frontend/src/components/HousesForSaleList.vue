@@ -2,11 +2,11 @@
   <div>
     <h1>Houses for sale!</h1>
     <div class="list">
-      <div v-for="house in houseData" :key="house.id">
+      <div v-for="house in houseData" :key="house.id" class="card mb-3">
         <house-list v-bind:house="house">
           <div class="agentInfo">
             <router-link :to="{name: 'Agent', params: {id: house.agent.id}}">
-              <img v-bind:src="'http://localhost:3000' + house.agent.profile_image" />
+              <img v-bind:src="house.agent.profile_image" />
               <p>{{ house.agent.first_name }} {{ house.agent.last_name }}</p>
             </router-link>
           </div>
@@ -45,7 +45,7 @@ export default {
 }
 .agentInfo{
     position: absolute;
-    right: -10px;
+    right: 10px;
     bottom: 0; 
 }
 img{

@@ -1,9 +1,8 @@
 <template>
     <div>
         <div v-if="agent.id!==undefined">
-            <h1>Agent Listing</h1>
             <div class="estateAgentInfo">
-                <img v-bind:src="'http://localhost:3000' + agent.profile_image"/>
+                <img v-bind:src="agent.profile_image"/>
                 <div>
                     <h2>{{agent.first_name}} {{agent.last_name}}</h2>
                     <p>{{agent.email}}</p>
@@ -14,7 +13,7 @@
         </div>
         <div class="list">
             <div class="card mb-3" v-for="house in agent.listings" :key="house.id">
-                <HouseList v-bind:house="house"></HouseList>
+                <house-list v-bind:house="house"></house-list>
             </div>
         </div>
 </div>

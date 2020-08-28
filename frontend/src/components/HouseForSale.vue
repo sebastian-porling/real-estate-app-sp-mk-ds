@@ -4,7 +4,7 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item" v-for="(image, index) in house.images" v-bind:index="index" v-bind:key="image.id" :class="index==0 ? 'active' :''">
-                    <img v-bind:src="'http://localhost:3000' + image" class="d-block w-100" alt="...">
+                    <img v-bind:src="image" class="d-block w-100" alt="...">
                 </div>
             </div>
             <div v-if="house.images.length > 1">
@@ -20,25 +20,25 @@
         </div>
         <div class="row agent">
             <div class="col">
-                <img v-bind:src="'http://localhost:3000' + house.agent.profile_image" class="agentPicture">
+                <img v-bind:src="house.agent.profile_image" class="agentPicture">
                 <div>{{house.agent.first_name}} {{house.agent.last_name}}</div>
                 <p>{{house.agent.email}}</p>
             </div>
-            <div class="col-6">
-                <button class="btn btn-light">Maps</button>
+            <!-- <div class="col-6">
             </div>
-            <div class="col"></div>
+            <div class="col"></div> -->
         </div>
         <div>
             <h2>{{house.address}}</h2>
             <div>{{house.description}}</div>
         </div>
-
-        <div class="maps">
-            <div>{{house.latitude}}</div>
-            <div>{{house.longitude}}</div>
-        </div>
-
+            <GmapMap
+                :center="{lat:house.latitude, lng:house.longitude}"
+                :zoom="10"
+                class="maps">
+                <GmapMarker 
+                :position="{lat:house.latitude, lng:house.longitude}"/>
+                </GmapMap>
       </div>
 
   </div>
@@ -51,16 +51,12 @@ export default {
     data(){
         return{
             house: {},
-            houseId: ""
+            houseId: "",
              }
     },
     async created(){
         this.houseId = this.$route.params.id;
         await this.getHouseObject();
-        console.log("Length: " + this.house.images.length);
-    },
-    mounted(){
-
     },
     methods: {
         getHouseObject: async function(){
@@ -81,10 +77,14 @@ img{
     border-radius: 50%;
 }
 .agent{
-    background-color: antiquewhite;
+    margin-top: 5px;
 }
 .agentContainer{
     margin-left: 100px;
     margin-right: 100px;
+}
+.maps{
+    height:360px;
+    width: stretch;
 }
 </style>
