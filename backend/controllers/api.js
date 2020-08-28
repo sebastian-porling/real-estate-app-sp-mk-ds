@@ -2,7 +2,7 @@ const express = require("express")
     , router = express()
     , House = require("../modules/house");
 
-app.use((req, res, next) => {
+    router.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
   });

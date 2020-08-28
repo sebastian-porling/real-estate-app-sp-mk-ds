@@ -12,7 +12,6 @@
 
       <router-link :to="{name: 'Agent', params: {id: house.agent.id}}">
         <p>{{ house.agent.first_name }} {{ house.agent.last_name }}</p>
-
         <img v-bind:src="house.agent.profile_image" />
       </router-link>
       <hr />
