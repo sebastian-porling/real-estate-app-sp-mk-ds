@@ -28,27 +28,26 @@
                 <button class="btn btn-light">Maps</button>
             </div>
             <div class="col">
-                
+
             </div>
         </div>
         <div>
             <h2>{{house.address}}</h2>
             <div>{{house.description}}</div>
         </div>
-        
+
         <div class="maps">
             <div>{{house.latitude}}</div>
         <div>{{house.longitude}}</div>
         </div>
-        
+
       </div>
-  
+
   </div>
 </template>
 <script>
 import axios from 'axios';
-//gzH6AQwUg
-//AJMgtqi-hB - 2 images
+
 export default {
     name: "HouseForSale",
     data(){
@@ -63,13 +62,12 @@ export default {
         console.log("Length: " + this.house.images.length);
     },
     mounted(){
-        
+
     },
     methods: {
         getHouseObject: async function(){
             let response = await axios.get(`http://localhost:3000/api/house/${this.houseId}`);
             this.house = response.data;
-            console.log(this.house);
         }
     }
 }
@@ -78,6 +76,7 @@ export default {
 <style scoped>
 img{
     height:400px;
+    max-width: 400px;
 }
 .rounded{
     height:100px;

@@ -5,6 +5,8 @@ import VueRouter from 'vue-router';
 
 import HouseForSale from "./components/HouseForSale.vue";
 import HousesForSaleList from './components/HousesForSaleList.vue';
+import AgentListing from "./components/AgentListing.vue";
+
 Vue.use(VueRouter);
 
 Vue.config.productionTip = false
@@ -12,7 +14,8 @@ Vue.config.productionTip = false
 
 const routes = [
   {path: '/house/:id',name:'House', component: HouseForSale},
-  {path: '/', component: HousesForSaleList}
+  {path: '/', component: HousesForSaleList},
+  {path: '/agent/:id', name:'Agent', component: AgentListing}
 ]
 
 const router = new VueRouter({
