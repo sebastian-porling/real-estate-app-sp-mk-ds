@@ -3,19 +3,29 @@ const data = require("../data/house_data.json")
     , shortid = require('shortid');
 
 /**
- * Returns all houses 
+ * Returns all houses on the given page
+ * @param {Integer} page a positive integer
  * @returns array of houses or empty array
  */
-module.exports.getAll = async () => {
-    const houses = [];
-    const tempData = JSON.parse(JSON.stringify(data));
+module.exports.getAll = async (page = 0) => {
+    let k = 0;
+    const houses = [],
+          MIN_PAGE = page*10,
+          MAX_PAGE = MIN_PAGE+9,
+          tempData = JSON.parse(JSON.stringify(data));
+    
     for (const agent of tempData) {
+        if(k > MAX_PAGE) break;
         const newListings = []
             , agentListings = agent.listings;
         delete agent.listings;
         for (const house of agentListings) {
-            newHouse = {...house, agent};
-            newListings.push(newHouse);
+            if (k < MIN_PAGE){
+                k++;
+                continue;
+            } else if (k > MAX_PAGE) break;
+            newListings.push({...house, agent});
+            k++;
         }
         houses.push(...newListings);
     }
