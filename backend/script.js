@@ -1,20 +1,36 @@
-const data = require('./data/house_data.json');
-const file = require('jsonfile');
-const shortid = require('shortid');
-const FORMATING = { spaces: 4, EOL: "\r\n" };
+const file = require("jsonfile"),
+    shortid = require("shortid"),
+    data = require("./data/house_data.json"),
+    FORMATING = { spaces: 4, EOL: "\r\n" },
+    profileImage = (id) =>
+        `/image/profile/agent-profile-${(id + "").padStart(3, "0")}.jpg`,
+    houseImage = (id) =>
+        `/image/houses/house-image-${(id + "").padStart(4, "0")}.jpg`;
 
-function generateHouseIds() {
+/**
+ *  Script that adds ids for houses,
+ *  replaces images for houses and replaces image for agent
+ */
+function generateDataWithIdAndImages() {
     const newData = [];
+    let a = 1,
+        h = 1;
     for (const agent of data) {
         const newListings = [];
         for (const house of agent.listings) {
-            newHouse = {id: shortid.generate(), ...house};
+            newHouse = { id: shortid.generate(), ...house };
+            for (let i = 0; i < newHouse.images.length; i++) {
+                newHouse.images[i] = houseImage(h);
+                h++;
+            }
             newListings.push(newHouse);
         }
-        agent.listings = newListings
+        agent.profile_image = profileImage(a);
+        agent.listings = newListings;
         newData.push(agent);
+        a++;
     }
-    file.writeFileSync('./data/house_data.json', newData, FORMATING);
+    file.writeFileSync("./data/house_data.json", newData, FORMATING);
 }
 
-generateHouseIds();
+generateDataWithIdAndImages();
