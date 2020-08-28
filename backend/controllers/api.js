@@ -2,6 +2,11 @@ const express = require("express")
     , router = express()
     , House = require("../modules/house");
 
+    router.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
 /**
  * Gets all the houses
  */

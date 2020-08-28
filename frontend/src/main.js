@@ -13,9 +13,11 @@ Vue.config.productionTip = false
 
 
 const routes = [
+
   {path: '/house/:id',name:'House', component: HouseForSale},
   {path: '/', component: HousesForSaleList},
   {path: '/agent/:id', name:'Agent', component: AgentListing}
+
 ]
 
 const router = new VueRouter({

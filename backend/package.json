@@ -14,7 +14,9 @@
   "author": "Sebastian Porling, Mehtab Kayani and David Stjernkvist",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.20.0",
     "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.3",
     "clear": "^0.1.0",
     "express": "^4.17.1",
     "express-error-handler": "^1.1.0",
@@ -22,7 +24,9 @@
     "internal-ip": "^6.1.0",
     "jsonfile": "^6.0.1",
     "morgan": "^1.10.0",
+    "node-base64-image": "^2.0.1",
     "pkg": "^4.4.9",
+    "request": "^2.88.2",
     "shortid": "^2.2.15"
   },
   "devDependencies": {
