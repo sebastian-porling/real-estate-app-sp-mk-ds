@@ -1,36 +1,35 @@
 <template>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="form-group">
-        <label for="fname">Address</label>
-        <input type="text" class="form-control" value="" v-model="address" />
-      </div>
-      <div class="form-group">
-        <label for="lname">Description</label>
-        <input
-          type="text"
-          class="form-control"
-          value=""
-          v-model="description"
-        />
-      </div>
-      <div class="form-group">
-        <label for="age">Longitude</label>
-        <input type="text" class="form-control" value="" v-model="longitude" />
-      </div>
-      <div class="form-group">
-        <label for="age">Latitude</label>
-        <input type="text" class="form-control" value="" v-model="latitude" />
-      </div>
-      <div class="form-group">
-        <label for="age">Image Url</label>
-        <input type="text" class="form-control" value="" v-model="image" />
-      </div>
+  <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Add house for Agent</div>
+    
+                    <div class="card-body">
+                        <form @submit="addHouseForAgent">
+                        <strong>Address:</strong>
+                        <input type="text" class="form-control" v-model="address">
+                        <strong>Description:</strong>
+                        <textarea class="form-control" v-model="description"></textarea>
+                        <strong>Latitude:</strong>
+                        <input type="text" class="form-control" v-model="latitude">
+                        <strong>Longitude:</strong>
+                        <input type="text" class="form-control" v-model="longitude">
+                        <strong>Image URL:</strong>
+                        <input type="text" class="form-control" v-model="image">
+    
+                        <button class="btn btn-success">Submit</button>
+                        </form>
+                        <pre>
+                        {{this.$route.params.id}}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a @click="$router.go(-1)" class="btn btn-info">Back</a>
     </div>
-    <div class="col-sm-12">
-      <a href="#" class="btn btn-success" @click="addHouseForAgent">Submit</a>
-    </div>
-  </div>
+    
 </template>
 
 <script>
@@ -41,8 +40,8 @@ export default {
     return {
       address: "",
       description: "",
-      longitude: "",
       latitude: "",
+      longitude: "",
       image: [],
       agentId: ""
 
@@ -52,20 +51,21 @@ export default {
   },
     async created(){
         this.agentId = this.$route.params.id;
-        await this.getAgentObject();
+        
     },
   methods: {
-    addHouseForAgent() {
+    addHouseForAgent(e) {
+        e.preventDefault();
       axios
-        .post("http://localhost:8080/house/", {
-          params: {
+        .post("http://localhost:3000/api/house/", {
+          
             address: this.address,
             description: this.description,
-            longitude: this.longitude,
             latitude: this.latitude,
-            image: this.image,
+            longitude: this.longitude,
+            images: this.image,
             agent_id: this.agentId
-          },
+        
         })
         .then((response) => (this.responseData = response.data))
         .catch((error) => {
