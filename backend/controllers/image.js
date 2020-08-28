@@ -1,8 +1,9 @@
 const express = require("express")
-    , router = express();
+    , router = express()
+    , path = require("path");
 
 /* register static images */
-router.use("/", express.static("../images"));
+router.use("/", express.static(path.join(__dirname, "../images")));
 
 /**
  * 404 for images that doesn't exist
