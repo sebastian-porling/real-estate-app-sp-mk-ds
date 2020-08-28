@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="agentContainer">
       <div v-if="house.id!==undefined">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
@@ -75,8 +75,7 @@ export default {
 
 <style scoped>
 img{
-    height:400px;
-    max-width: 400px;
+    height:600px;
 }
 .rounded{
     height:100px;
@@ -84,5 +83,9 @@ img{
 }
 .agent{
     background-color: antiquewhite;
+}
+.agentContainer{
+    margin-left: 100px;
+    margin-right: 100px;
 }
 </style>
