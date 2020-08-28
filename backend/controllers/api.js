@@ -3,7 +3,20 @@ const express = require("express")
     , House = require("../modules/house");
 
 /**
- * Gets all the houses
+ * Gets all the houses on the given page
+ * Page signifies the following: 
+ * page=0 -> houses 0-9
+ * page=1 -> houses 10-19
+ */
+router.get("/houses/:page", async (req, res) => {
+    const houses = await House.getAll(req.params.page);
+    const status = houses.length > 0 ? 200 : 404;
+    const data = houses.length > 0 ? houses : { msg: "Couldn't fetch houses" };
+    res.status(status).json(data);
+});
+
+/**
+ * Gets the first 10 houses
  */
 router.get("/houses", async (req, res) => {
     const houses = await House.getAll();

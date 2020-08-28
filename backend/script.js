@@ -3,9 +3,9 @@ const file = require("jsonfile"),
     data = require("./data/house_data.json"),
     FORMATING = { spaces: 4, EOL: "\r\n" },
     profileImage = (id) =>
-        `/image/profile/agent-profile-${(id + "").padStart(3, "0")}.jpg`,
+        `http://localhost:3000/image/profile/agent-profile-${(id + "").padStart(3, "0")}.jpg`,
     houseImage = (id) =>
-        `/image/houses/house-image-${(id + "").padStart(4, "0")}.jpg`;
+        `http://localhost:3000/image/houses/house-image-${(id + "").padStart(4, "0")}.jpg`;
 
 /**
  *  Script that adds ids for houses,
