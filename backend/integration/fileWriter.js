@@ -1,5 +1,5 @@
-const jsonfile = require("jsonfile");
-const FORMATING = { spaces: 4, EOL: "\r\n" };
+const jsonfile = require("jsonfile")
+    , FORMATING = { spaces: 4, EOL: "\r\n" };
 
 /**
  * Writes a json file with the given input
