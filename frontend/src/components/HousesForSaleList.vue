@@ -5,7 +5,8 @@
     <div v-for="house in houseData" :key="house.id">
       <h3>Address</h3>
       <router-link :to="{name: 'House', params: {id: house.id}}"><p>{{ house.address }}</p></router-link>
-      <img v-bind:src="house.images[0]" />
+      <img v-bind:src="house.images[0]"/>
+      
       <h3>Real Estate Agent</h3>
       
 
