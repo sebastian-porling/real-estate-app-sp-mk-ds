@@ -11,7 +11,7 @@ Vue.config.productionTip = false
 
 
 const routes = [
-  {path: '/house/:id', component: HouseForSale},
+  {path: '/house/:id',name:'House', component: HouseForSale},
   {path: '/', component: HousesForSaleList}
 ]
 
@@ -19,7 +19,7 @@ const router = new VueRouter({
   routes,
   mode:"history"
 })
-//render: h => h(App),
+
 new Vue({
   router,
   render: h => h(App),
