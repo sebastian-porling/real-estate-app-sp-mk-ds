@@ -3,27 +3,24 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Add house for Agent</div>
-    
+                    <div class="card-header">Add house for Agent  </div>
+ 
                     <div class="card-body">
                         <form @submit="addHouseForAgent">
                         <strong>Address:</strong>
-                        <input type="text" class="form-control" v-model="house.address">
+                        <input type="text" class="form-control" v-model="house.address" required>
                         <strong>Description:</strong>
-                        <textarea class="form-control" v-model="house.description"></textarea>
+                        <textarea class="form-control" v-model="house.description" required></textarea>
                         <strong>Latitude:</strong>
-                        <input type="number" class="form-control" v-model.number="house.latitude">
+                        <input type="number" class="form-control" v-model.number="house.latitude" required>
                         <strong>Longitude:</strong>
-                        <input type="number" class="form-control" v-model.number="house.longitude">
+                        <input type="number" class="form-control" v-model.number="house.longitude" required>
                         <strong>Image URL:</strong>
                         <input type="text" class="form-control" v-model="image">
-                        <button @click=addImage>Add to images</button>
+                        <button @click=addImage class="btn btn-primary">Add to images</button>
     
                         <button class="btn btn-success">Submit</button>
                         </form>
-                        <pre>
-                        {{this.$route.params.id}}
-                        </pre>
                     </div>
                 </div>
             </div>
@@ -37,6 +34,7 @@
 import axios from "axios";
 
 export default {
+    
   data() {
     return {
          house: {
@@ -48,14 +46,15 @@ export default {
              images: [],
              agent_id: 0
         },
-        image: ""
+        image: "",
+        agentName: "NAME"
 
 
 
     };
   },
     async created(){
-        this.house.agent_id = parseInt(this.$route.params.id);
+        this.house.agent_id = parseInt(this.$route.params.id);        
         
     },
   methods: {

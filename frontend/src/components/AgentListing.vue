@@ -6,7 +6,7 @@
       </router-link>
             <h1>Agent Listing</h1>
             <div class="estateAgentInfo">
-                <img v-bind:src="agent.profile_image"/>
+                <img v-bind:src="agent.profile_image" class="agent-img"/>
                 <div>
                     <h2>{{agent.first_name}} {{agent.last_name}}</h2>
                     <p>{{agent.email}}</p>
@@ -66,5 +66,11 @@ export default {
 .list{
     margin-left: 100px;
     margin-right: 100px;
+}
+.agent-img{
+    border-radius: 50%;
+    max-width: 250px;
+    max-height: 250px;
+
 }
 </style>

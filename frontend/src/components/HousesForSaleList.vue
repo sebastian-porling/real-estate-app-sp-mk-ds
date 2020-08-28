@@ -13,7 +13,7 @@
 
       <router-link :to="{name: 'Agent', params: {id: house.agent.id}}">
         <p>{{ house.agent.first_name }} {{ house.agent.last_name }}</p>
-        <img v-bind:src="house.agent.profile_image" />
+        <img v-bind:src="house.agent.profile_image" class="agent-img"/>
       </router-link>
       <hr />
     </div>
@@ -41,5 +41,11 @@ export default {
 <style scoped>
 hr {
   max-width: 250px;
+}
+
+.agent-img{
+  border-radius: 50%;
+  max-height: 150px;
+  max-width: 150px;
 }
 </style>
