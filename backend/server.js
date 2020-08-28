@@ -1,13 +1,14 @@
 const express = require('express')
     , app = express()
-    , path = require('path');
+    , path = require('path')
+    , cors = require('cors');
 
 /* register logger and body parser */
 app.use(require("./util/logger"));
 app.use(express.json());
 
 /* register routes and middleware */
-app.use(require("./middlewares"));
+app.use(cors());
 app.use(require("./controllers"));
 
 /**
