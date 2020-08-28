@@ -51,9 +51,9 @@ router.get("/agent/:id", async (req, res) => {
  */
 router.post("/house", async (req, res) => {
     const house = await House.add(req.body);
-    const status = house.id !== undefined ? 201 : 409;
+    const status = house !== undefined ? 201 : 409;
     const data =
-        house.id !== undefined ? house : { msg: "House already exists" };
+        house !== undefined ? house : { msg: "House already exists" };
     res.status(status).json(data);
 });
 

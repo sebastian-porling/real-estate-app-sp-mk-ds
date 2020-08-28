@@ -1,8 +1,14 @@
 <template>
     <div>
         <div v-if="agent.id!==undefined">
+
+      <router-link :to="{name: 'AddHouse', params: {id: agent.id}}">
+          Add House
+      </router-link>
+            <h1>Agent Listing</h1>
+
             <div class="estateAgentInfo">
-                <img v-bind:src="agent.profile_image"/>
+                <img v-bind:src="agent.profile_image" class="agent-img"/>
                 <div>
                     <h2>{{agent.first_name}} {{agent.last_name}}</h2>
                     <p>{{agent.email}}</p>
@@ -58,9 +64,11 @@ export default {
     margin-left: 100px;
     margin-right: 100px;
 }
+
 img{
   height: 240px;
   width: 240px;
   border-radius: 50%;
+
 }
 </style>

@@ -72,6 +72,17 @@
                 "images": [
                     "http://localhost:3000/image/houses/house-image-0012.jpg"
                 ]
+            },
+            {
+                "address": "Stockholmsvägen 25 ",
+                "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+                "latitude": 38.8426524,
+                "longitude": -9.1289108,
+                "images": [
+                    "https://thisrentaldoesnotexist.com/img-new/img1.jpg",
+                    "https://thisrentaldoesnotexist.com/img-new/img2.jpg"
+                ],
+                "id": "IAvixxxw-"
             }
         ]
     },
