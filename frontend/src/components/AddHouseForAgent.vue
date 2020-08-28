@@ -8,15 +8,15 @@
                     <div class="card-body">
                         <form @submit="addHouseForAgent">
                         <strong>Address:</strong>
-                        <input type="text" class="form-control" v-model="address">
+                        <input type="text" class="form-control" v-model="house.address">
                         <strong>Description:</strong>
-                        <textarea class="form-control" v-model="description"></textarea>
+                        <textarea class="form-control" v-model="house.description"></textarea>
                         <strong>Latitude:</strong>
-                        <input type="text" class="form-control" v-model="latitude">
+                        <input type="text" class="form-control" v-model="house.latitude">
                         <strong>Longitude:</strong>
-                        <input type="text" class="form-control" v-model="longitude">
+                        <input type="text" class="form-control" v-model="house.longitude">
                         <strong>Image URL:</strong>
-                        <input type="text" class="form-control" v-model="image">
+                        <input type="text" class="form-control" v-model="house.image">
     
                         <button class="btn btn-success">Submit</button>
                         </form>
@@ -38,36 +38,36 @@ import axios from "axios";
 export default {
   data() {
     return {
-      address: "",
-      description: "",
-      latitude: "",
-      longitude: "",
-      image: [],
-      agentId: ""
+         house: {
+
+             address: "",
+             description: "",
+             latitude: "",
+             longitude: "",
+             image: [],
+             agent_id: ""
+        }
 
 
 
     };
   },
     async created(){
-        this.agentId = this.$route.params.id;
+        this.house.agent_id = this.$route.params.id;
         
     },
   methods: {
     addHouseForAgent(e) {
-        e.preventDefault();
+      e.preventDefault();
+      
       axios
         .post("http://localhost:3000/api/house/", {
-          
-            address: this.address,
-            description: this.description,
-            latitude: this.latitude,
-            longitude: this.longitude,
-            images: this.image,
-            agent_id: this.agentId
-        
+          params:{
+              ...this.house
+        }})
+        .then((response) =>{
+            console.log(response.data)
         })
-        .then((response) => (this.responseData = response.data))
         .catch((error) => {
           console.log(error);
         });
