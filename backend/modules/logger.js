@@ -12,7 +12,7 @@ module.exports.logger = morgan((tokens, req, res) => {
         chalk.red.bold(status),
         chalk.white(tokens.url(req, res)),
         chalk.yellow(tokens["response-time"](req, res) + " ms"),
-    ].join(" ");
+    ].join(" ")+"\n";
 });
 
 /**
