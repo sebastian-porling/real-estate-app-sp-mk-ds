@@ -7,12 +7,10 @@
       <router-link :to="{name: 'House', params: {id: house.id}}"><p>{{ house.address }}</p></router-link>
       <img v-bind:src="house.images[0]" />
       <h3>Real Estate Agent</h3>
-      <a href="#"
-        ><p>{{ house.agent.first_name }} {{ house.agent.last_name }}</p>
-
+      <router-link :to="{name: 'Agent', params: {id: house.agent.id}}">
+        <p>{{ house.agent.first_name }} {{ house.agent.last_name }}</p>
         <img v-bind:src="house.agent.profile_image" />
-      </a>
-
+      </router-link>
       <hr />
     </div>
   </div>
