@@ -31,7 +31,7 @@ router.get("/house/:id", async (req, res) => {
 /**
  * Gets the agent on the given id
  */
-router.get("/api/agent/:id", async (req, res) => {
+router.get("/agent/:id", async (req, res) => {
     const agent = await House.getAgent(req.params.id);
     const status = agent !== undefined ? 200 : 404;
     const data = agent !== undefined ? agent : { msg: "Agent doesn't exsist" };
@@ -41,7 +41,7 @@ router.get("/api/agent/:id", async (req, res) => {
 /**
  * Creates a house if it already doesn't exist and if agent exists
  */
-router.post("/api/house", async (req, res) => {
+router.post("/house", async (req, res) => {
     const house = await House.add(req.body);
     const status = house.id !== undefined ? 201 : 409;
     const data =
