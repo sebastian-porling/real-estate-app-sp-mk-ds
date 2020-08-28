@@ -1,10 +1,14 @@
 <template>
     <div>
+        <header>
+            <a @click="$router.go(-1)" class="btn btn-info">Back</a>
+        </header>
         <div v-if="agent.id!==undefined">
 
       <router-link :to="{name: 'AddHouse', params: {id: agent.id}}">
           Add House
       </router-link>
+
             <h1>Agent Listing</h1>
 
             <div class="estateAgentInfo">

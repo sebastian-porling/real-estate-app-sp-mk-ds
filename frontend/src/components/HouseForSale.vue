@@ -1,5 +1,8 @@
 <template>
   <div class="agentContainer">
+      <header>
+            <a @click="$router.go(-1)" class="btn btn-info">Back</a>
+      </header>
       <div v-if="house.id!==undefined">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
@@ -70,6 +73,9 @@ export default {
 <style scoped>
 img{
     height:600px;
+}
+header{
+    margin: 10px;
 }
 .agentPicture{
     height:120px;
