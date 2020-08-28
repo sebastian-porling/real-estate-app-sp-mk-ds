@@ -1,5 +1,5 @@
 const data = require("../data/house_data.json");
-const fw = require('./fileWriter.js');
+const fw = require('../integration/fileWriter.js');
 const shortid = require('shortid');
 
 /**

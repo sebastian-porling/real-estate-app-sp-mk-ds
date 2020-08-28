@@ -4,7 +4,7 @@ const chalk = require("chalk");
 /**
  * Logs the HTTP request into standard out with styling!
  */
-module.exports.logger = morgan((tokens, req, res) => {
+module.exports = morgan((tokens, req, res) => {
     const status = tokens.status(req, res);
     return [
         chalk.green.bold(tokens.method(req, res)),
