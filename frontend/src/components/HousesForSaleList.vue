@@ -19,22 +19,43 @@
 <script>
 import axios from "axios";
 import HouseList from "./HouseList.vue";
+import {debounce} from "lodash";
 
 export default {
   data() {
     return {
       houseData: [],
+      page: 0
     };
   },
   components: {
     HouseList
   },
   async created() {
-    let response = await axios.get("http://localhost:3000/api/houses");
-    this.houseData = response.data;
-    console.log(response.data);
+    this.houseData = await this.fetchHouses();
+    this.handleDebouncedScroll = debounce(this.handleScroll, 500);
+    window.addEventListener('scroll', this.handleDebouncedScroll);
   },
-  mounted() {},
+  mounted() {
+
+  },
+  methods: {
+    async fetchHouses() {
+      try {
+        const res = await axios.get(`http://localhost:3000/api/houses/${this.page++}`)
+        return res.data;
+      } catch (e) {
+        this.page = 0;
+        return [];
+      }
+    },
+    async handleScroll() {
+      if((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
+        const data = await this.fetchHouses();
+        this.houseData.push(...data);
+      }
+    }
+  },
 };
 </script>
 
@@ -52,11 +73,5 @@ img{
   height: 120px;
   width: 120px;
   border-radius: 50%;
-}
-
-.agent-img{
-  border-radius: 50%;
-  max-height: 150px;
-  max-width: 150px;
 }
 </style>
