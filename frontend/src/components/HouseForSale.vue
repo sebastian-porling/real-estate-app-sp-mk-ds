@@ -4,32 +4,30 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item" v-for="(image, index) in house.images" v-bind:index="index" v-bind:key="image.id" :class="index==0 ? 'active' :''">
-                    <img v-bind:src="image" class="d-block w-100" alt="...">
+                    <img v-bind:src="'http://localhost:3000' + image" class="d-block w-100" alt="...">
                 </div>
             </div>
             <div v-if="house.images.length > 1">
-            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
         <div class="row agent">
             <div class="col">
-                <img v-bind:src="house.agent.profile_image" class="rounded">
+                <img v-bind:src="'http://localhost:3000' + house.agent.profile_image" class="agentPicture">
                 <div>{{house.agent.first_name}} {{house.agent.last_name}}</div>
                 <p>{{house.agent.email}}</p>
             </div>
             <div class="col-6">
                 <button class="btn btn-light">Maps</button>
             </div>
-            <div class="col">
-
-            </div>
+            <div class="col"></div>
         </div>
         <div>
             <h2>{{house.address}}</h2>
@@ -38,7 +36,7 @@
 
         <div class="maps">
             <div>{{house.latitude}}</div>
-        <div>{{house.longitude}}</div>
+            <div>{{house.longitude}}</div>
         </div>
 
       </div>
@@ -77,9 +75,10 @@ export default {
 img{
     height:600px;
 }
-.rounded{
-    height:100px;
-    width: 100px;
+.agentPicture{
+    height:120px;
+    width: 120px;
+    border-radius: 50%;
 }
 .agent{
     background-color: antiquewhite;
