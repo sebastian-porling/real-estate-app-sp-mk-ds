@@ -8,39 +8,37 @@
                 </div>
             </div>
             <div v-if="house.images.length > 1">
-            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
         <div class="row agent">
             <div class="col">
-                <img v-bind:src="house.agent.profile_image" class="rounded">
+                <img v-bind:src="house.agent.profile_image" class="agentPicture">
                 <div>{{house.agent.first_name}} {{house.agent.last_name}}</div>
                 <p>{{house.agent.email}}</p>
             </div>
-            <div class="col-6">
-                <button class="btn btn-light">Maps</button>
+            <!-- <div class="col-6">
             </div>
-            <div class="col">
-
-            </div>
+            <div class="col"></div> -->
         </div>
         <div>
             <h2>{{house.address}}</h2>
             <div>{{house.description}}</div>
         </div>
-
-        <div class="maps">
-            <div>{{house.latitude}}</div>
-        <div>{{house.longitude}}</div>
-        </div>
-
+            <GmapMap
+                :center="{lat:house.latitude, lng:house.longitude}"
+                :zoom="10"
+                class="maps">
+                <GmapMarker 
+                :position="{lat:house.latitude, lng:house.longitude}"/>
+                </GmapMap>
       </div>
 
   </div>
@@ -53,16 +51,12 @@ export default {
     data(){
         return{
             house: {},
-            houseId: ""
+            houseId: "",
              }
     },
     async created(){
         this.houseId = this.$route.params.id;
         await this.getHouseObject();
-        console.log("Length: " + this.house.images.length);
-    },
-    mounted(){
-
     },
     methods: {
         getHouseObject: async function(){
@@ -77,15 +71,20 @@ export default {
 img{
     height:600px;
 }
-.rounded{
-    height:100px;
-    width: 100px;
+.agentPicture{
+    height:120px;
+    width: 120px;
+    border-radius: 50%;
 }
 .agent{
-    background-color: antiquewhite;
+    margin-top: 5px;
 }
 .agentContainer{
     margin-left: 100px;
     margin-right: 100px;
+}
+.maps{
+    height:360px;
+    width: stretch;
 }
 </style>
