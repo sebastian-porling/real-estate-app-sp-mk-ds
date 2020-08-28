@@ -12,11 +12,12 @@
                         <strong>Description:</strong>
                         <textarea class="form-control" v-model="house.description"></textarea>
                         <strong>Latitude:</strong>
-                        <input type="text" class="form-control" v-model="house.latitude">
+                        <input type="number" class="form-control" v-model.number="house.latitude">
                         <strong>Longitude:</strong>
-                        <input type="text" class="form-control" v-model="house.longitude">
+                        <input type="number" class="form-control" v-model.number="house.longitude">
                         <strong>Image URL:</strong>
-                        <input type="text" class="form-control" v-model="house.image">
+                        <input type="text" class="form-control" v-model="image">
+                        <button @click=addImage>Add to images</button>
     
                         <button class="btn btn-success">Submit</button>
                         </form>
@@ -42,29 +43,28 @@ export default {
 
              address: "",
              description: "",
-             latitude: "",
-             longitude: "",
-             image: [],
-             agent_id: ""
-        }
+             latitude: 0,
+             longitude: 0,
+             images: [],
+             agent_id: 0
+        },
+        image: ""
 
 
 
     };
   },
     async created(){
-        this.house.agent_id = this.$route.params.id;
+        this.house.agent_id = parseInt(this.$route.params.id);
         
     },
   methods: {
     addHouseForAgent(e) {
-      e.preventDefault();
+        e.preventDefault();
+        console.log(this.house);
       
       axios
-        .post("http://localhost:3000/api/house/", {
-          params:{
-              ...this.house
-        }})
+        .post("http://localhost:3000/api/house/", this.house)
         .then((response) =>{
             console.log(response.data)
         })
@@ -72,6 +72,11 @@ export default {
           console.log(error);
         });
     },
+    addImage(e){
+        e.preventDefault();
+        this.house.images.push(this.image);
+        this.image = ""
+    }
   },
 };
 </script>
