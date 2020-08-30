@@ -1,12 +1,16 @@
 <template>
     <div id="app">
+        <back-button/>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
 export default {
-    name: "App"
+    name: "App",
+    components: {
+        BackButton: () => import("./components/BackButton")
+    }
 };
 </script>
 

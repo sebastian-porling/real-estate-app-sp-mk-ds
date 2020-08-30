@@ -1,9 +1,9 @@
 <template>
-    <a @click="$router.back()" class="btn btn-primary z-depth-1">
+    <a v-if="$route.path !== '/'" @click="$router.back()" class="btn btn-primary z-depth-1">
         <svg
-            width="2em"
+            width="1.8em"
             height="2em"
-            viewBox="1 0 16 15"
+            viewBox="1 0 16 16"
             class="bi bi-chevron-left"
             fill="white"
             xmlns="http://www.w3.org/2000/svg"
@@ -24,10 +24,10 @@ export default {
 
 <style scoped>
 .btn {
-    z-index: 10000;
+    z-index: 500;
     position: fixed;
-    bottom: 35 !important;
-    left: 35;
+    bottom: 35px;
+    left: 35px;
     border-radius: 50%;
 }
 </style>

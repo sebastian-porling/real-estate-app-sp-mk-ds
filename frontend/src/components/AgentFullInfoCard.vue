@@ -26,8 +26,9 @@ export default {
 
 <style>
 .agent-img {
-    max-height: 9rem;
-    max-width: 9rem;
+    max-width: 10rem;
+    width: 20vw;
+    height: auto;
     border-radius: 50%;
 }
 .agent-img:hover {
