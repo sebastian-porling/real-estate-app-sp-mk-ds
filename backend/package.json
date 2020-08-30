@@ -1,33 +1,47 @@
 {
-  "name": "real-estate-application",
-  "version": "1.0.0",
-  "description": "Backend for the real estate application",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin.js",
-    "dev": "nodemon bin.js"
-  },
-  "keywords": [
-    "express"
-  ],
-  "author": "Sebastian Porling, Mehtab Kayani and David Stjernkvist",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^4.1.0",
-    "clear": "^0.1.0",
-    "connect-history-api-fallback": "^1.6.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "figlet": "^1.5.0",
-    "internal-ip": "^6.1.0",
-    "jsonfile": "^6.0.1",
-    "morgan": "^1.10.0",
-    "node-base64-image": "^2.0.1",
-    "pkg": "^4.4.9",
-    "shortid": "^2.2.15"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+    "name": "real-estate-application",
+    "version": "1.0.0",
+    "description": "Backend for the real estate application",
+    "main": "index.js",
+    "bin": "bin.js",
+    "pkg": {
+        "assets": [
+            "./node_modules/figlet/fonts/Standard.flf",
+            "./images/**/*",
+            "./dist/**/*",
+            "./data/*"
+        ]
+    },
+    "scripts": {
+        "start": "node bin.js",
+        "dev": "nodemon bin.js",
+        "build": "pkg . --out-path ../build"
+    },
+    "keywords": [
+        "express",
+        "morgan",
+        "figlet",
+        "pkg",
+        "chalk"
+    ],
+    "author": "Sebastian Porling, Mehtab Kayani and David Stjernkvist",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "clear": "^0.1.0",
+        "connect-history-api-fallback": "^1.6.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "figlet": "^1.5.0",
+        "internal-ip": "^6.1.0",
+        "jimp": "^0.16.1",
+        "jsonfile": "^6.0.1",
+        "morgan": "^1.10.0",
+        "ora": "^5.0.0",
+        "pkg": "^4.4.9",
+        "shortid": "^2.2.15"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
 }
