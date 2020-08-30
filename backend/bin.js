@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const { main } = require(".");
-const port = process.env.PORT || 3000;
+const { main } = require("."),
+    port = process.env.PORT || 3000;
 
 main(port);
