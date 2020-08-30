@@ -1,10 +1,10 @@
-const express = require("express")
-    , router = express()
-    , House = require("../modules/house");
+const express = require("express"),
+    router = express(),
+    House = require("../modules/house");
 
 /**
  * Gets all the houses on the given page
- * Page signifies the following: 
+ * Page signifies the following:
  * page=0 -> houses 0-9
  * page=1 -> houses 10-19
  */
@@ -52,8 +52,7 @@ router.get("/agent/:id", async (req, res) => {
 router.post("/house", async (req, res) => {
     const house = await House.add(req.body);
     const status = house !== undefined ? 201 : 409;
-    const data =
-        house !== undefined ? house : { msg: "House already exists" };
+    const data = house !== undefined ? house : { msg: "House already exists" };
     res.status(status).json(data);
 });
 

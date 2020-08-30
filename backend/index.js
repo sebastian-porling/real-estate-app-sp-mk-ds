@@ -1,7 +1,7 @@
-const cluster = require("cluster");
-const numCPUs = require("os").cpus().length;
-const welcomeMessage = require("./util/welcomeMessage.js");
-const server = require("./server.js");
+const cluster = require("cluster"),
+    numCPUs = require("os").cpus().length,
+    welcomeMessage = require("./util/welcomeMessage.js"),
+    server = require("./server.js");
 
 /**
  * Shows welcome message and starts server with logger
@@ -20,5 +20,4 @@ module.exports.main = (port = 3000) => {
             console.error("Couldn't start server, ", error);
         }
     }
-    
 };

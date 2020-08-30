@@ -1,28 +1,50 @@
-const { encode, decode } = require('node-base64-image');
+const Jimp = require("jimp");
+const chalk = require("chalk");
+const ora = require("ora");
+const figlet = require("figlet");
+const clear = require("clear");
 
-const url = 'https://thispersondoesnotexist.com/image';
-const options = {
-  string: true,
-  headers: {
-    "User-Agent": "my-app"
-  }
-};
+const throbber = ora({ spinner: "arc" });
+const url = "https://thispersondoesnotexist.com/image";
 
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
+/**
+ * sets a time out for the given milliseconds
+ * @param {Integer} ms milliseconds to sleep
+ */
+function sleep(ms = 0) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
 }
 
-async function getImage() {
-  for (let index = 1; index < 26; index++) {
-    await sleep(5000);
-    encode(url, options)
-      .then(image => {
-        console.log("Image ", index);
-        decode(image, { fname: `agent-profile-${(index+"").padStart(3, "0")}`, ext: 'jpg' });
-      });
-  }
+/**
+ * Generates 25 images from
+ * this persondoesnotexist.com
+ */
+async function generateImages() {
+    clear();
+    console.log(chalk.magentaBright(figlet.textSync('profile-scraper'))+"\n");
+    throbber.start("Starting...");
+    for (let index = 1; index < 26; index++) {
+        const fileName = `agent-profile-${(index + "").padStart(3, "0")}.jpg`;
+        await sleep(5000);
+        await fetchAndWriteImage(fileName)
+    }
+    throbber.success("Finished, all files written!")
 }
 
-getImage();
+/**
+ * Fetches the image and writes it
+ * with the hxw 300x300 and 
+ * 80% of the original quality
+ * @param {String} fileName name of the file to write
+ */
+async function fetchAndWriteImage(fileName) {
+    throbber.start(`Writing ` + fileName);
+    const image = await Jimp.read(url);
+    await image.resize(300, Jimp.AUTO);
+    await image.quality(80);
+    await image.writeAsync(fileName);
+}
+
+generateImages();
