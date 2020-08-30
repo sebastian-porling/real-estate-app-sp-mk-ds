@@ -1,5 +1,5 @@
 <template>
-    <div class="list" v-if="houseData">
+    <div class="list z-depth-1 p-2" v-if="houseData">
         <h1 class="display-3">Houses for sale!</h1>
         <house-list :houses="houseData"> </house-list>
     </div>
