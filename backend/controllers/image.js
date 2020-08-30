@@ -1,6 +1,6 @@
-const express = require("express")
-    , router = express()
-    , path = require("path");
+const express = require("express"),
+    router = express(),
+    path = require("path");
 
 /* register static images */
 router.use("/", express.static(path.join(__dirname, "../images")));
@@ -10,6 +10,6 @@ router.use("/", express.static(path.join(__dirname, "../images")));
  */
 router.get("*", (req, res) => {
     res.status(404).json({ msg: "That image doesn't exist" });
-})
+});
 
 module.exports = router;

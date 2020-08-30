@@ -1,5 +1,6 @@
-const jsonfile = require("jsonfile")
-    , FORMATING = { spaces: 4, EOL: "\r\n" };
+const jsonfile = require("jsonfile"),
+    path = require("path"),
+    FORMATING = { spaces: 4, EOL: "\r\n" };
 
 /**
  * Writes a json file with the given input
@@ -8,7 +9,7 @@ const jsonfile = require("jsonfile")
  */
 module.exports.writeJson = async (FILE_NAME = "result.json", JSON) => {
     try {
-        return jsonfile.writeFile(FILE_NAME, JSON, FORMATING);
+        return jsonfile.writeFile(path.join(__dirname, FILE_NAME), JSON, FORMATING);
     } catch (error) {
         throw "Couldn't write the " + FILE_NAME;
     }
