@@ -153,6 +153,7 @@ export default {
                 const res = await axios.post(`${this.$server}/api/house/`, this.house);
                 if (res.data === undefined) throw Error("Didn't add!");
                 this.house = null;
+                this.$emit("add-house", res.data);
                 this.closeModal()
             } catch (error) {
                 console.log(error);
@@ -192,7 +193,7 @@ export default {
 }
 .mask {
     position: fixed;
-    z-index: 9998;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
