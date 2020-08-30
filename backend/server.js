@@ -1,7 +1,6 @@
-const express = require('express')
-    , app = express()
-    , path = require('path')
-    , cors = require('cors');
+const express = require("express"),
+    app = express(),
+    cors = require("cors");
 
 /* register logger and body parser */
 app.use(require("./util/logger"));
