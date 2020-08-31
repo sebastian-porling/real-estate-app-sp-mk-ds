@@ -11,7 +11,7 @@ The application can be viewed on [https://vuetastic-real-estate-sp-ds-mk.herokua
 ## :bomb: Install, Build, Deploy
 
 The simplest way is to use the build script `sh build.sh` if you are running bash.
-Other wise do the folliwing:
+Otherwise do the following:
 
 ```bash
 cd frontend
@@ -58,21 +58,21 @@ We decided to manipulate the data to have the following structure:
 
 We manipulated the data in order to fetch and use the data easier for the backend and frontend, here are the scripts and what they do:
 
-|script             |functionality                                                              |
-|-------------------|---------------------------------------------------------------------------|
-|[profileScraper.js](./backend/images/profile/profileScraper.js)|Gets 25 images from thispersondoesnotexist.com|
-|[houseScraper.js](./backend/images/houses/houseScraper.js)|Gets 385 images from thisrentaldoesnotexist.com|
-|[mapDataScript.js](./backend/mapDataScript.js)|Maps image names to the agents and houses, also adds an ID to the houses|
+|script                                                         |functionality                                                              |
+|---------------------------------------------------------------|---------------------------------------------------------------------------|
+|[profileScraper.js](./backend/images/profile/profileScraper.js)|Gets 25 images from thispersondoesnotexist.com                             |
+|[houseScraper.js](./backend/images/houses/houseScraper.js)     |Gets 385 images from thisrentaldoesnotexist.com                            |
+|[mapDataScript.js](./backend/mapDataScript.js)                 |Maps image names to the agents and houses, also adds an ID to the houses   |
 
 ### :arrow_forward: Frontend
 
-The frontend is made with **Vue** and uses the **vue-router** to handle the routing and logic for the pages. The pages are the "actuall" views that is on the application. They have the following components and functionallity:
+The frontend is made with **Vue** and uses the **vue-router** to handle the routing and logic for the pages. The pages are the "actual" views that is on the application. They have the following components and functionality:
 
-|page             |components                                                |functionallity|
-|-----------------|----------------------------------------------------------|--------|
-|HousesForSalePage|HouseList, HouseListItem, AgenShortInfoCard               |Fetches the API for houses, and keeps track on what "page" of houses we have and increments it everytime we fetch|
-|HousePage        |HouseGoogleMap, HouseCarousel, AgentFullInfoCard          |Basically just fetches and displays data|
-|AgentPage        |HouseList, HouseListItem, AddHouseModal, AgentFullInfoCard|Fetches from the API and displays data, links to the AddHouseModal|
+|page             |path         |components                                                 |functionality                                                                                                       |
+|-----------------|-------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+|HousesForSalePage|/            |HouseList, HouseListItem, AgentShortInfoCard               |Fetches the API for houses, and keeps track on what "page" of houses we have and increments it every time we fetch  |
+|HousePage        |/house/:id   |HouseGoogleMap, HouseCarousel, AgentFullInfoCard           |Basically just fetches and displays data                                                                            |
+|AgentPage        |/agent/:id   |HouseList, HouseListItem, AddHouseModal, AgentFullInfoCard |Fetches from the API and displays data, links to the AddHouseModal                                                  |
 
 The components used are the following:
 
@@ -87,23 +87,23 @@ The components used are the following:
 |AddHouseModal      |A modal that has a form to add a house through the API                         |
 |BackButton         |Uses the vue-router to back the browser history                                |
 
-We use the enviroment files to distinguish between the different enviroments. Mostly for the API, as we generate the images as "/path/:id" we have to add the link for the backend if we are in devolpment enviroment. Otherwise the application will be on the same host, then we don't need to add the link.
+We use the environment files to distinguish between the different environments. Mostly for the API, as we generate the images as "/path/:id" we have to add the link for the backend if we are in development environment. Otherwise the application will be on the same host, then we don't need to add the link.
 
 ### :arrow_backward: Backend
 
-The backend uses **express.js** for the server. Most of the interesting logic happens in the **/controllers/api.js** and **/modules/house.js**, basically all the request paths and the logic is happening there. **/controllers/image.js** just redirects the content in the **images** directory. It wasn't possible to package this project as a binary becouse the **pkg.js** can not write on package files, which would be needed as we need to be able to add houses to the **house_data.json** file, so this project has to be deployed and executed as a node application.
+The backend uses **express.js** for the server. Most of the interesting logic happens in the **/controllers/api.js** and **/modules/house.js**, basically all the request paths and the logic is happening there. **/controllers/image.js** just redirects the content in the **images** directory. It wasn't possible to package this project as a binary because the **pkg.js** can not write on package files, which would be needed as we need to be able to add houses to the **house_data.json** file, so this project has to be deployed and executed as a node application.
 
-Here is all the information about the different HTTP request available, all other request will reviece a 404:
+Here is all the information about the different HTTP request available, all other request will receive a 404:
 
-|method |path           |functionallity                                                 |
-|-------|---------------|---------------------------------------------------------------|
-|GET    |/              |Returns anything that is in the public "dist" folder"          |
-|GET    |/image         |Returns any image that is in the "images" folder               |
-|GET    |/house/:id     |Returns house with the given id                                |
-|GET    |/houses        |Returns the first page of houses                               |
-|GET    |/houses/:page  |Returns the houses at the given page, page=1 => houses 0-9...  |
-|POST   |/house         |Creates a house on the given agent id                          |
-|GET    |/agent/:id     |Returns agent info and their houses at the given agent id      |
+|method |path               |functionality                                                  |
+|-------|-------------------|---------------------------------------------------------------|
+|GET    |/                  |Returns anything that is in the public "dist" folder"          |
+|GET    |/image             |Returns any image that is in the "images" folder               |
+|GET    |/api/house/:id     |Returns house with the given id                                |
+|GET    |/api/houses        |Returns the first page of houses                               |
+|GET    |/api/houses/:page  |Returns the houses at the given page, page=1 => houses 0-9...  |
+|POST   |/api/house         |Creates a house on the given agent id                          |
+|GET    |/api/agent/:id     |Returns agent info and their houses at the given agent id      |
 
 Here is information about all the different classes used for handling the application:
 
