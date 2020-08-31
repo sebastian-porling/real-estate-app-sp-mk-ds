@@ -3,6 +3,11 @@
 This solutions is made by Sebastian Porling, Mehtab Kayani and David Stjernqvist.
 The application can be viewed on [https://vuetastic-real-estate-sp-ds-mk.herokuapp.com/](https://vuetastic-real-estate-sp-ds-mk.herokuapp.com/).
 
+## Demo
+
+![Website gif](./doc/site-demo.gif)
+![Server gif](./doc/server-demo.gif)
+
 ## :bomb: Install, Build, Deploy
 
 The simplest way is to use the build script `sh build.sh` if you are running bash.

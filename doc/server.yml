@@ -1,0 +1,183 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/porling/se.experis.academy/javascript/tasks/vue/real_estate_application/backend
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 50
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 14
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: null
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Cascadia Code PL"
+  
+  # The size of the font
+  fontSize: 14
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 2404
+    content: "\e[0m\e[49m\e[39m\e[27m\e[24m\e[1m\e[7m%\e[27m\e[1m\e[0m                                                 \r\e[0m\e[49m\e[39m\e[27m\e[24m\e[K\r\n\r\n\r\n\e[3A\e7\e[0m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[48;5;236m\e[38;5;31m \e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39m~\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mse.\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mjavas\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mt\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mv\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mreal_estate_application\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mbackend\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m\e[0m\e[38;5;31m\e[48;5;236m\e[48;5;236m\e[38;5;31m \e[0m\e[38;5;31m\e[48;5;236m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;76m❯\e[0m\e[38;5;76m\e[49m\e[38;5;76m\e[0m\e[38;5;76m\e[49m\e[30m\e[0m\e[30m\e[49m\e[39m \e[0m\e[49m\e[39m"
+  - delay: 1068
+    content: 'n'
+  - delay: 256
+    content: p
+  - delay: 184
+    content: "\e[?25l\e8\e[0m\e[49m\e[39m\e[27m\e[24m\e[J"
+  - delay: 25
+    content: "\e]2;porling@PC6391: ~/se.experis.academy/javascript/tasks/vue/real_estate_application/backend\a\e]1;..ation/backend\a\e[0m\e[38;5;31m\e[48;5;236m\e[49m\e[39m\e[27m\e[24m\e[1m\e[7m%\e[27m\e[1m\e[0m                                                 \r\e[0m\e[49m\e[39m\e[27m\e[24m\e[K"
+  - delay: 14
+    content: "\r\e[0m\e[27m\e[24m\e[J\e[0m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[48;5;236m\e[38;5;31m \e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39m~\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mse.\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mjavas\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mt\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mv\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mreal_estate_application\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mbackend\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m\e[0m\e[38;5;31m\e[48;5;236m\e[48;5;236m\e[38;5;31m \e[0m\e[38;5;31m\e[48;5;236m\e[48;5;236m\e[38;5;244m\e[0m\e[38;5;244m\e[48;5;236m\e[48;5;236m\e[38;5;76m \e[38;5;76m\e[38;5;76mfeat/build-and-doc \e[38;5;39m?1\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;76m \e[0m\e[38;5;76m\e[48;5;236m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;76m❯\e[0m\e[38;5;76m\e[49m\e[38;5;76m\e[0m\e[38;5;76m\e[49m\e[30m\e[0m\e[30m\e[49m\e[39m \e[0m\e[49m\e[39m\e[K\e[?1h\e=\e[?12l\e[?25h\e[?2004h"
+  - delay: 14
+    content: 'n'
+  - delay: 5
+    content: "\bnp"
+  - delay: 85
+    content: m
+  - delay: 167
+    content: ' '
+  - delay: 175
+    content: s
+  - delay: 193
+    content: t
+  - delay: 112
+    content: a
+  - delay: 78
+    content: r
+  - delay: 177
+    content: t
+  - delay: 92
+    content: "\e[?1l\e>\e[?25l\r\n\e[A\e[?25l\e[?2004l\r\r\e[3A\e[0m\e[27m\e[24m\e[J\e[0m\e[49m\e[27m\e[24m\e[38;5;76m❯\e[0m\e[38;5;76m\e[49m\e[39m\e[27m\e[24m npm start\e[K\e[?12l\e[?25h\r\r\n\e]2;npm start\a\e]1;npm\a"
+  - delay: 742
+    content: "\r\n> real-estate-application@1.0.0 start /home/porling/se.experis.academy/javascript/tasks/vue/real_estate_application/backend\r\n> node bin.js\r\n\r\n"
+  - delay: 559
+    content: "\e[2J\e[0f"
+  - delay: 15
+    content: "\e[92m                   _            _   _       \e[39m\r\n\e[92m __   ___   _  ___| |_ __ _ ___| |_(_) ___  \e[39m\r\n\e[92m \\ \\ / / | | |/ _ \\ __/ _` / __| __| |/ __| \e[39m\r\n\e[92m  \\ V /| |_| |  __/ || (_| \\__ \\ |_| | (__  \e[39m\r\n\e[92m   \\_/  \\__,_|\\___|\\__\\__,_|___/\\__|_|\\___| \e[39m\r\n\e[92m                                            \e[39m\r\n"
+  - delay: 22
+    content: "\e[36m                 _             _        _       \e[39m\r\n\e[36m  _ __ ___  __ _| |   ___  ___| |_ __ _| |_ ___ \e[39m\r\n\e[36m | '__/ _ \\/ _` | |  / _ \\/ __| __/ _` | __/ _ \\\e[39m\r\n\e[36m | | |  __/ (_| | | |  __/\\__ \\ || (_| | ||  __/\e[39m\r\n\e[36m |_|  \\___|\\__,_|_|  \\___||___/\\__\\__,_|\\__\\___|\e[39m\r\n\e[36m                                                \e[39m\r\n\e[35m\e[39m\r\n\e[35m A simple REST API for fetching real estate data!\e[39m\r\n"
+  - delay: 46
+    content: "\e[93m\e[39m\r\n\e[93m     Server on: http://10.46.132.61:3000\e[39m\r\n\e[91m\t or on: http://localhost:3000\e[39m\r\n\e[91m\e[39m\r\n"
+  - delay: 2189
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/api/houses\e[39m \e[33m11.429 ms\e[39m\r\n\r\n"
+  - delay: 2177
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/\e[39m \e[33m7.448 ms\e[39m\r\n\r\n"
+  - delay: 166
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/app.78217c34.css\e[39m \e[33m28.890 ms\e[39m\r\n\r\n"
+  - delay: 21
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/app.4b8a3258.js\e[39m \e[33m26.378 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-vendors.188e04d6.css\e[39m \e[33m33.819 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-vendors.0cb27cab.js\e[39m \e[33m37.391 ms\e[39m\r\n\r\n"
+  - delay: 236
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-5ff575e0.2eea0458.css\e[39m \e[33m37.164 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-14ad2a34.4b14bbf0.css\e[39m \e[33m41.242 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-1c725ef6.9bf1cf98.css\e[39m \e[33m36.825 ms\e[39m\r\n\r\n"
+  - delay: 50
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-5ab4b16c.4ea61fce.css\e[39m \e[33m34.302 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-75b062fe.5e61932a.css\e[39m \e[33m31.608 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-72811cde.8fd32818.css\e[39m \e[33m39.617 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-eb84a82e.1c2921b5.css\e[39m \e[33m7.053 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-d983928e.0aadcecc.css\e[39m \e[33m7.470 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-a054d458.5985e1a5.css\e[39m \e[33m5.746 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/css/chunk-fb386d82.22a154bd.css\e[39m \e[33m6.438 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-14ad2a34.72cb90a9.js\e[39m \e[33m10.697 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-1c725ef6.e7c26bf9.js\e[39m \e[33m14.557 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-2d0af07e.8d4c4b5a.js\e[39m \e[33m3.325 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-5ff575e0.38dbe659.js\e[39m \e[33m6.115 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-4e278ee1.f4ccfcdd.js\e[39m \e[33m6.220 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-5ab4b16c.6131c1ff.js\e[39m \e[33m6.036 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-75b062fe.6df6e286.js\e[39m \e[33m10.019 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-72811cde.68f3fc00.js\e[39m \e[33m10.560 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-a054d458.a297c710.js\e[39m \e[33m10.313 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-fb386d82.443b2576.js\e[39m \e[33m11.425 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-eb84a82e.21b12624.js\e[39m \e[33m17.031 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/js/chunk-d983928e.a90645d0.js\e[39m \e[33m22.746 ms\e[39m\r\n\r\n"
+  - delay: 79
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/api/houses/0\e[39m \e[33m8.394 ms\e[39m\r\n\r\n"
+  - delay: 305
+    content: "\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/profile/agent-profile-001.jpg\e[39m \e[33m3.727 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/profile/agent-profile-002.jpg\e[39m \e[33m4.672 ms\e[39m"
+  - delay: 100
+    content: "\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0001.jpg\e[39m \e[33m9.434 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0002.jpg\e[39m \e[33m11.831 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0004.jpg\e[39m \e[33m5.869 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0008.jpg\e[39m \e[33m9.912 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0011.jpg\e[39m \e[33m5.764 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0012.jpg\e[39m \e[33m9.635 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0013.jpg\e[39m \e[33m27.217 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0020.jpg\e[39m \e[33m4.874 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0015.jpg\e[39m \e[33m6.973 ms\e[39m\r\n\r\n\e[32m\e[1mGET\e[22m\e[39m \U0001F7E1 \e[31m\e[1m304\e[22m\e[39m \e[37m/image/houses/house-image-0018.jpg\e[39m \e[33m7.178 ms\e[39m\r\n\r\n"
+  - delay: 3797
+    content: ^C
+  - delay: 12
+    content: "\r\n\e[1m\e[7m%\e[27m\e[1m\e[0m                                                 \r \r\e]2;porling@PC6391: ~/se.experis.academy/javascript/tasks/vue/real_estate_application/backend\a\e]1;..ation/backend\a"
+  - delay: 64
+    content: "\r\e[0m\e[27m\e[24m\e[J\e[0m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[48;5;236m\e[38;5;31m \e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39m~\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mse.\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mjavas\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mt\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mv\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mreal_estate_application\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mbackend\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m\e[0m\e[38;5;31m\e[48;5;236m\e[48;5;236m\e[38;5;31m \e[0m\e[38;5;31m\e[48;5;236m\e[48;5;236m\e[38;5;244m\e[0m\e[38;5;244m\e[48;5;236m\e[48;5;236m\e[30m \e[38;5;244m\e[38;5;244mfeat/build-and-doc \e[38;5;244m?1\e[0m\e[38;5;244m\e[48;5;236m\e[48;5;236m\e[30m \e[0m\e[30m\e[48;5;236m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;196m❯\e[0m\e[38;5;196m\e[49m\e[38;5;196m\e[0m\e[38;5;196m\e[49m\e[30m\e[0m\e[30m\e[49m\e[39m \e[0m\e[49m\e[39m\e[K\e[?1h\e=\e[?2004h\e[?25l"
+  - delay: 14
+    content: "\r\r\e[3A\e[0m\e[27m\e[24m\e[J\e[0m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[48;5;236m\e[38;5;31m \e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39m~\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mse.\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mjavas\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mt\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[38;5;103mv\e[0m\e[38;5;103m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mreal_estate_application\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m/\e[1m\e[38;5;31m\e[48;5;236m\e[38;5;39mbackend\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;31m\e[0m\e[38;5;31m\e[48;5;236m\e[48;5;236m\e[38;5;31m \e[0m\e[38;5;31m\e[48;5;236m\e[48;5;236m\e[38;5;244m\e[0m\e[38;5;244m\e[48;5;236m\e[48;5;236m\e[38;5;76m \e[38;5;76m\e[38;5;76mfeat/build-and-doc \e[38;5;39m?1\e[0m\e[38;5;39m\e[48;5;236m\e[48;5;236m\e[38;5;76m \e[0m\e[38;5;76m\e[48;5;236m\e[49m\e[38;5;236m\e[0m\e[38;5;236m\e[49m\e[39m\r\n\e[0m\e[49m\e[38;5;196m❯\e[0m\e[38;5;196m\e[49m\e[38;5;196m\e[0m\e[38;5;196m\e[49m\e[30m\e[0m\e[30m\e[49m\e[39m \e[0m\e[49m\e[39m\e[K\e[?12l\e[?25h"
+  - delay: 136
+    content: "\e[?2004l\r\r\n^F"
