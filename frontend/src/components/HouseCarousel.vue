@@ -14,7 +14,7 @@
                     :class="index == 0 ? 'active' : ''"
                 >
                     <img
-                        v-bind:src="image"
+                        v-bind:src="parseURL(image)"
                         class="d-block w-100 rounded"
                         alt="..."
                     />
@@ -55,7 +55,13 @@ export default {
     name: "HouseCarousel",
     props: {
         images: Array
-    }
+    },
+    methods: {
+        parseURL(url) {
+            const URL_REGEX = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
+            return url.match(URL_REGEX) ? url : `${this.$server}${url}`;
+        }
+    },
 };
 </script>
 

@@ -7,7 +7,7 @@
                     <div
                         class="card-img test"
                         v-bind:style="{
-                            'background-image': 'url(' + house.images[0] + ')'
+                            'background-image': 'url(' + parseURL(house.images[0]) + ')'
                         }"
                     ></div>
                 </router-link>
@@ -36,7 +36,13 @@
 <script>
 export default {
     name: "HouseListItem",
-    props: ["house"]
+    props: ["house"],
+    methods: {
+        parseURL(url) {
+            const URL_REGEX = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
+            return url.match(URL_REGEX) ? url : `${this.$server}${url}`;
+        }
+    },
 };
 </script>
 

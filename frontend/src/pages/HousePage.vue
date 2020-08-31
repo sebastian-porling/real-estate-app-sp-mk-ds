@@ -1,6 +1,5 @@
 <template>
     <div class="agentContainer p-2">
-        <back-button />
         <div v-if="house">
             <house-carousel :images="house.images" />
             <div class="z-depth-1 p-2 pb-4 mt-4">
@@ -31,7 +30,6 @@ export default {
         };
     },
     components: {
-        BackButton: () => import("../components/BackButton"),
         HouseGoogleMap: () => import("../components/HouseGoogleMap"),
         HouseCarousel: () => import("../components/HouseCarousel"),
         AgentFullInfoCard: () => import("../components/AgentFullInfoCard")
