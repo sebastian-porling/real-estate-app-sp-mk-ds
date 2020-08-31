@@ -56,7 +56,6 @@ export default {
     async created() {
         this.agentId = this.$route.params.id;
         await this.getAgentObject();
-        console.log(this.$route)
     },
     methods: {
         /**
