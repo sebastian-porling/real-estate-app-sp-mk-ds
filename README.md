@@ -1,7 +1,7 @@
 # :house: :heavy_dollar_sign: Real Estate Application
 
 This solutions is made by Sebastian Porling, Mehtab Kayani and David Stjernqvist.
-The application can be viewed on [https://vuetastic-real-estate-sp-ds-mk.herokuapp.com/](https://vuetastic-real-estate-sp-ds-mk.herokuapp.com/).
+The application can be viewed on [vuetastic-real-estate-sp-ds-mk.herokuapp.com/](https://vuetastic-real-estate-sp-ds-mk.herokuapp.com/) or [porling.me/real-estate-app-sp-mk-ds/](http://porling.me/real-estate-app-sp-mk-ds/).
 
 ## Demo
 
