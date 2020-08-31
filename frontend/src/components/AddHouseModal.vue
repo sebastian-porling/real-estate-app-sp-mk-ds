@@ -53,6 +53,7 @@
                                 class="form-control"
                                 v-model.number="house.latitude"
                                 placeholder="13.21421"
+                                step="any"
                                 required
                             />
                         </div>
@@ -65,6 +66,7 @@
                                 class="form-control"
                                 v-model.number="house.longitude"
                                 placeholder="-34.31231"
+                                step="any"
                                 required
                             />
                         </div>
@@ -74,10 +76,11 @@
                             <span class="input-group-text">Image URL</span>
                         </div>
                         <input
-                            type="text"
+                            type="url"
                             class="form-control"
                             placeholder="https://www.website.com/image.jpg"
                             aria-describedby="basic-addon2"
+                            pattern="https?://.*"
                             v-model="image"
                         />
                         <div class="input-group-append">
@@ -150,11 +153,14 @@ export default {
         async addHouseForAgent(e) {
             e.preventDefault();
             try {
-                const res = await axios.post(`${this.$server}/api/house/`, this.house);
+                const res = await axios.post(
+                    `${this.$server}/api/house/`,
+                    this.house
+                );
                 if (res.data === undefined) throw Error("Didn't add!");
                 this.house = null;
                 this.$emit("add-house", res.data);
-                this.closeModal()
+                this.closeModal();
             } catch (error) {
                 console.log(error);
             }
@@ -165,7 +171,8 @@ export default {
          */
         addImage(e) {
             e.preventDefault();
-            if (this.image !== "") {
+            const URL_REGEX = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
+            if (this.image !== "" && this.image.match(URL_REGEX)) {
                 this.house.images.push(this.image);
                 this.image = "";
             }
