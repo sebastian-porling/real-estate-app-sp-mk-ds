@@ -4,7 +4,7 @@ import VueRouter from "vue-router";
 import router from "./router";
 import * as VueGoogleMaps from "vue2-google-maps";
 
-Vue.prototype.$server = 'http://localhost:3000';
+Vue.prototype.$server = process.env.VUE_APP_API_URL;
 Vue.use(VueGoogleMaps, {
     load: {
         key: "AIzaSyC4ORXbSRauP16RXMXzXc-dCysYrGW93hM"
